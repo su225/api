@@ -534,6 +534,16 @@ message MeshConfig {
   // can be used with an extension provider to delegate the authorization decision to a custom authorization system.
   repeated ExtensionProvider extension_providers = 57;
 
+  message Http11ProtocolOptions {
+    // Currently Envoy normalizes all header keys to lower-case. This could potentially break some applications.
+    // In such cases, header case needs to be preserved. Setting this to true would do that.
+    bool preserve_header_key_casing = 1;
+  }
+
+  // $hide_from_docs
+  // Defines additional options related to HTTP 1.1 connection
+  Http11ProtocolOptions http_11_protocol_options = 58;
+
   // $hide_from_docs
   // Next available field number: 58
   reserved 1;

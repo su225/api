@@ -5,7 +5,7 @@ location: https://istio.io/docs/reference/config/istio.mesh.v1alpha1.html
 layout: protoc-gen-docs
 generator: protoc-gen-docs
 weight: 20
-number_of_entries: 29
+number_of_entries: 30
 ---
 <p>Configuration affecting the service mesh as a whole.</p>
 
@@ -813,6 +813,33 @@ No
 <td>
 <p>Use istiod_side to specify CA Server integrate to Istiod side or Agent side
 Default: true</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="MeshConfig-Http11ProtocolOptions">MeshConfig.Http11ProtocolOptions</h2>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MeshConfig-Http11ProtocolOptions-preserve_header_key_casing">
+<td><code>preserveHeaderKeyCasing</code></td>
+<td><code>bool</code></td>
+<td>
+<p>Currently Envoy normalizes all header keys to lower-case. This could potentially break some applications.
+In such cases, header case needs to be preserved. Setting this to true would do that.</p>
 
 </td>
 <td>

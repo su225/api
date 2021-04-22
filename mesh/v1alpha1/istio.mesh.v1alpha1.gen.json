@@ -190,6 +190,9 @@
             "items": {
               "$ref": "#/components/schemas/istio.mesh.v1alpha1.MeshConfig.ExtensionProvider"
             }
+          },
+          "http11ProtocolOptions": {
+            "$ref": "#/components/schemas/istio.mesh.v1alpha1.MeshConfig.Http11ProtocolOptions"
           }
         }
       },
@@ -520,6 +523,15 @@
             }
           }
         ]
+      },
+      "istio.mesh.v1alpha1.MeshConfig.Http11ProtocolOptions": {
+        "type": "object",
+        "properties": {
+          "preserveHeaderKeyCasing": {
+            "description": "Currently Envoy normalizes all header keys to lower-case. This could potentially break some applications. In such cases, header case needs to be preserved. Setting this to true would do that.",
+            "type": "boolean"
+          }
+        }
       },
       "istio.mesh.v1alpha1.MeshConfig.AuthPolicy": {
         "type": "string",
