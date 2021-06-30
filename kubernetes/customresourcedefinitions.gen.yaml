@@ -550,11 +550,23 @@ spec:
                                 properties:
                                   caCertificates:
                                     type: string
+                                  cipherSuites:
+                                    description: 'Optional: Only use cipher suites
+                                      from the list provided.'
+                                    items:
+                                      type: string
+                                    type: array
                                   clientCertificate:
                                     description: REQUIRED if mode is `MUTUAL`.
                                     type: string
                                   credentialName:
                                     type: string
+                                  ecdhCurves:
+                                    description: 'Optional: Use only the specified
+                                      ECDH curves.'
+                                    items:
+                                      type: string
+                                    type: array
                                   mode:
                                     enum:
                                     - DISABLE
@@ -573,6 +585,26 @@ spec:
                                     items:
                                       type: string
                                     type: array
+                                  tlsMaximumProtocolVersion:
+                                    description: 'Optional: Maximum client TLS protocol
+                                      version to use.'
+                                    enum:
+                                    - TLS_AUTO
+                                    - TLSV1_0
+                                    - TLSV1_1
+                                    - TLSV1_2
+                                    - TLSV1_3
+                                    type: string
+                                  tlsMinimumProtocolVersion:
+                                    description: 'Optional: Minimum client TLS protocol
+                                      version to use.'
+                                    enum:
+                                    - TLS_AUTO
+                                    - TLSV1_0
+                                    - TLSV1_1
+                                    - TLSV1_2
+                                    - TLSV1_3
+                                    type: string
                                 type: object
                             type: object
                           type: array
@@ -582,11 +614,23 @@ spec:
                           properties:
                             caCertificates:
                               type: string
+                            cipherSuites:
+                              description: 'Optional: Only use cipher suites from
+                                the list provided.'
+                              items:
+                                type: string
+                              type: array
                             clientCertificate:
                               description: REQUIRED if mode is `MUTUAL`.
                               type: string
                             credentialName:
                               type: string
+                            ecdhCurves:
+                              description: 'Optional: Use only the specified ECDH
+                                curves.'
+                              items:
+                                type: string
+                              type: array
                             mode:
                               enum:
                               - DISABLE
@@ -605,6 +649,26 @@ spec:
                               items:
                                 type: string
                               type: array
+                            tlsMaximumProtocolVersion:
+                              description: 'Optional: Maximum client TLS protocol
+                                version to use.'
+                              enum:
+                              - TLS_AUTO
+                              - TLSV1_0
+                              - TLSV1_1
+                              - TLSV1_2
+                              - TLSV1_3
+                              type: string
+                            tlsMinimumProtocolVersion:
+                              description: 'Optional: Minimum client TLS protocol
+                                version to use.'
+                              enum:
+                              - TLS_AUTO
+                              - TLSV1_0
+                              - TLSV1_1
+                              - TLSV1_2
+                              - TLSV1_3
+                              type: string
                           type: object
                       type: object
                   type: object
@@ -1086,11 +1150,23 @@ spec:
                           properties:
                             caCertificates:
                               type: string
+                            cipherSuites:
+                              description: 'Optional: Only use cipher suites from
+                                the list provided.'
+                              items:
+                                type: string
+                              type: array
                             clientCertificate:
                               description: REQUIRED if mode is `MUTUAL`.
                               type: string
                             credentialName:
                               type: string
+                            ecdhCurves:
+                              description: 'Optional: Use only the specified ECDH
+                                curves.'
+                              items:
+                                type: string
+                              type: array
                             mode:
                               enum:
                               - DISABLE
@@ -1109,6 +1185,26 @@ spec:
                               items:
                                 type: string
                               type: array
+                            tlsMaximumProtocolVersion:
+                              description: 'Optional: Maximum client TLS protocol
+                                version to use.'
+                              enum:
+                              - TLS_AUTO
+                              - TLSV1_0
+                              - TLSV1_1
+                              - TLSV1_2
+                              - TLSV1_3
+                              type: string
+                            tlsMinimumProtocolVersion:
+                              description: 'Optional: Minimum client TLS protocol
+                                version to use.'
+                              enum:
+                              - TLS_AUTO
+                              - TLSV1_0
+                              - TLSV1_1
+                              - TLSV1_2
+                              - TLSV1_3
+                              type: string
                           type: object
                       type: object
                     type: array
@@ -1118,11 +1214,22 @@ spec:
                     properties:
                       caCertificates:
                         type: string
+                      cipherSuites:
+                        description: 'Optional: Only use cipher suites from the list
+                          provided.'
+                        items:
+                          type: string
+                        type: array
                       clientCertificate:
                         description: REQUIRED if mode is `MUTUAL`.
                         type: string
                       credentialName:
                         type: string
+                      ecdhCurves:
+                        description: 'Optional: Use only the specified ECDH curves.'
+                        items:
+                          type: string
+                        type: array
                       mode:
                         enum:
                         - DISABLE
@@ -1141,6 +1248,26 @@ spec:
                         items:
                           type: string
                         type: array
+                      tlsMaximumProtocolVersion:
+                        description: 'Optional: Maximum client TLS protocol version
+                          to use.'
+                        enum:
+                        - TLS_AUTO
+                        - TLSV1_0
+                        - TLSV1_1
+                        - TLSV1_2
+                        - TLSV1_3
+                        type: string
+                      tlsMinimumProtocolVersion:
+                        description: 'Optional: Minimum client TLS protocol version
+                          to use.'
+                        enum:
+                        - TLS_AUTO
+                        - TLSV1_0
+                        - TLSV1_1
+                        - TLSV1_2
+                        - TLSV1_3
+                        type: string
                     type: object
                 type: object
             type: object
@@ -2604,6 +2731,12 @@ spec:
                           type: array
                         credentialName:
                           type: string
+                        ecdhCurves:
+                          description: 'Optional: If specified, only use specified
+                            ECDH curves.'
+                          items:
+                            type: string
+                          type: array
                         httpsRedirect:
                           type: boolean
                         maxProtocolVersion:

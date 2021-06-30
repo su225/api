@@ -6,7 +6,7 @@ layout: protoc-gen-docs
 generator: protoc-gen-docs
 schema: istio.networking.v1alpha3.DestinationRule
 aliases: [/docs/reference/config/networking/v1alpha3/destination-rule]
-number_of_entries: 20
+number_of_entries: 21
 ---
 <p><code>DestinationRule</code> defines policies that apply to traffic intended for a
 service after routing has occurred. These rules specify configuration
@@ -1093,6 +1093,53 @@ No
 No
 </td>
 </tr>
+<tr id="ClientTLSSettings-cipher_suites">
+<td><code>cipherSuites</code></td>
+<td><code>string[]</code></td>
+<td>
+<p>Optional: Only use cipher suites from the list provided. If this is not
+provided then envoy defaults are used.</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="ClientTLSSettings-ecdh_curves">
+<td><code>ecdhCurves</code></td>
+<td><code>string[]</code></td>
+<td>
+<p>Optional: Use only the specified ECDH curves. Otherwise, envoy defaults are used</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="ClientTLSSettings-tls_minimum_protocol_version">
+<td><code>tlsMinimumProtocolVersion</code></td>
+<td><code><a href="#ClientTLSSettings-TLSProtocol">TLSProtocol</a></code></td>
+<td>
+<p>Optional: Minimum client TLS protocol version to use. If not specified then
+envoy defaults are used</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="ClientTLSSettings-tls_maximum_protocol_version">
+<td><code>tlsMaximumProtocolVersion</code></td>
+<td><code><a href="#ClientTLSSettings-TLSProtocol">TLSProtocol</a></code></td>
+<td>
+<p>Optional: Maximum client TLS protocol version to use. If not specified then
+envoy defaults are used</p>
+
+</td>
+<td>
+No
+</td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -1873,6 +1920,56 @@ client certificates for authentication.
 Compared to Mutual mode, this mode uses certificates generated
 automatically by Istio for mTLS authentication. When this mode is
 used, all other fields in <code>ClientTLSSettings</code> should be empty.</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="ClientTLSSettings-TLSProtocol">ClientTLSSettings.TLSProtocol</h2>
+<section>
+<p>TLS protocol versions.</p>
+
+<table class="enum-values">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ClientTLSSettings-TLSProtocol-TLS_AUTO">
+<td><code>TLS_AUTO</code></td>
+<td>
+<p>Automatically choose the optimal TLS version.</p>
+
+</td>
+</tr>
+<tr id="ClientTLSSettings-TLSProtocol-TLSV1_0">
+<td><code>TLSV1_0</code></td>
+<td>
+<p>TLS version 1.0</p>
+
+</td>
+</tr>
+<tr id="ClientTLSSettings-TLSProtocol-TLSV1_1">
+<td><code>TLSV1_1</code></td>
+<td>
+<p>TLS version 1.1</p>
+
+</td>
+</tr>
+<tr id="ClientTLSSettings-TLSProtocol-TLSV1_2">
+<td><code>TLSV1_2</code></td>
+<td>
+<p>TLS version 1.2</p>
+
+</td>
+</tr>
+<tr id="ClientTLSSettings-TLSProtocol-TLSV1_3">
+<td><code>TLSV1_3</code></td>
+<td>
+<p>TLS version 1.3</p>
 
 </td>
 </tr>

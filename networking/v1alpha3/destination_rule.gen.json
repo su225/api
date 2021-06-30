@@ -39,8 +39,39 @@
           "sni": {
             "description": "SNI string to present to the server during TLS handshake.",
             "type": "string"
+          },
+          "cipherSuites": {
+            "description": "Optional: Only use cipher suites from the list provided. If this is not provided then envoy defaults are used.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ecdhCurves": {
+            "description": "Optional: Use only the specified ECDH curves. Otherwise, envoy defaults are used",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tlsMinimumProtocolVersion": {
+            "$ref": "#/components/schemas/istio.networking.v1alpha3.ClientTLSSettings.TLSProtocol"
+          },
+          "tlsMaximumProtocolVersion": {
+            "$ref": "#/components/schemas/istio.networking.v1alpha3.ClientTLSSettings.TLSProtocol"
           }
         }
+      },
+      "istio.networking.v1alpha3.ClientTLSSettings.TLSProtocol": {
+        "description": "TLS protocol versions.",
+        "type": "string",
+        "enum": [
+          "TLS_AUTO",
+          "TLSV1_0",
+          "TLSV1_1",
+          "TLSV1_2",
+          "TLSV1_3"
+        ]
       },
       "istio.networking.v1alpha3.ClientTLSSettings.TLSmode": {
         "description": "TLS connection mode",

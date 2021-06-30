@@ -138,6 +138,13 @@
             "items": {
               "type": "string"
             }
+          },
+          "ecdhCurves": {
+            "description": "Optional: If specified, only use specified ECDH curves. Otherwise default to the default curves supported by Envoy.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
