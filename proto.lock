@@ -40887,6 +40887,12 @@
                 "is_repeated": true
               },
               {
+                "id": 7,
+                "name": "udp",
+                "type": "UDPRoute",
+                "is_repeated": true
+              },
+              {
                 "id": 6,
                 "name": "export_to",
                 "type": "string",
@@ -41116,6 +41122,39 @@
                 "id": 2,
                 "name": "route",
                 "type": "RouteDestination",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "UDPRoute",
+            "fields": [
+              {
+                "id": 1,
+                "name": "match",
+                "type": "L4UDPMatchAttributes",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "route",
+                "type": "RouteDestination",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "L4UDPMatchAttributes",
+            "fields": [
+              {
+                "id": 2,
+                "name": "port",
+                "type": "uint32"
+              },
+              {
+                "id": 5,
+                "name": "gateways",
+                "type": "string",
                 "is_repeated": true
               }
             ]
@@ -43256,6 +43295,12 @@
                 "is_repeated": true
               },
               {
+                "id": 7,
+                "name": "udp",
+                "type": "UDPRoute",
+                "is_repeated": true
+              },
+              {
                 "id": 6,
                 "name": "export_to",
                 "type": "string",
@@ -43485,6 +43530,39 @@
                 "id": 2,
                 "name": "route",
                 "type": "RouteDestination",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "UDPRoute",
+            "fields": [
+              {
+                "id": 1,
+                "name": "match",
+                "type": "L4UDPMatchAttributes",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "route",
+                "type": "RouteDestination",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "L4UDPMatchAttributes",
+            "fields": [
+              {
+                "id": 2,
+                "name": "port",
+                "type": "uint32"
+              },
+              {
+                "id": 5,
+                "name": "gateways",
+                "type": "string",
                 "is_repeated": true
               }
             ]
