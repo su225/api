@@ -588,6 +588,21 @@
           }
         }
       },
+      "istio.networking.v1alpha3.L4UDPMatchAttributes": {
+        "description": "L4 connection match attributes for UDP",
+        "type": "object",
+        "properties": {
+          "port": {
+            "type": "integer"
+          },
+          "gateways": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "istio.networking.v1alpha3.Percent": {
         "description": "Percent specifies a percentage in the range of [0.0, 100.0].",
         "type": "object",
@@ -782,6 +797,23 @@
           }
         }
       },
+      "istio.networking.v1alpha3.UDPRoute": {
+        "type": "object",
+        "properties": {
+          "match": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/istio.networking.v1alpha3.L4UDPMatchAttributes"
+            }
+          },
+          "route": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/istio.networking.v1alpha3.RouteDestination"
+            }
+          }
+        }
+      },
       "istio.networking.v1alpha3.VirtualService": {
         "description": "Configuration affecting traffic routing.",
         "type": "object",
@@ -819,6 +851,12 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/istio.networking.v1alpha3.TCPRoute"
+            }
+          },
+          "udp": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/istio.networking.v1alpha3.UDPRoute"
             }
           },
           "exportTo": {

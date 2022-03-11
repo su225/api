@@ -6,7 +6,7 @@ layout: protoc-gen-docs
 generator: protoc-gen-docs
 schema: istio.networking.v1alpha3.VirtualService
 aliases: [/docs/reference/config/networking/v1alpha3/virtual-service]
-number_of_entries: 25
+number_of_entries: 27
 ---
 <p>Configuration affecting traffic routing. Here are a few terms useful to define
 in the context of traffic routing.</p>
@@ -276,6 +276,15 @@ No
 be applied to any port that is not a HTTP or TLS port. The first rule
 matching an incoming request is used.</p>
 
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="VirtualService-udp">
+<td><code>udp</code></td>
+<td><code><a href="#UDPRoute">UDPRoute[]</a></code></td>
+<td>
 </td>
 <td>
 No
@@ -1212,6 +1221,74 @@ No
 <td>
 <p>The destination to which the connection should be forwarded to.</p>
 
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="UDPRoute">UDPRoute</h2>
+<section>
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="UDPRoute-match">
+<td><code>match</code></td>
+<td><code><a href="#L4UDPMatchAttributes">L4UDPMatchAttributes[]</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="UDPRoute-route">
+<td><code>route</code></td>
+<td><code><a href="#RouteDestination">RouteDestination[]</a></code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<h2 id="L4UDPMatchAttributes">L4UDPMatchAttributes</h2>
+<section>
+<p>L4 connection match attributes for UDP</p>
+
+<table class="message-fields">
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr id="L4UDPMatchAttributes-port">
+<td><code>port</code></td>
+<td><code>uint32</code></td>
+<td>
+</td>
+<td>
+No
+</td>
+</tr>
+<tr id="L4UDPMatchAttributes-gateways">
+<td><code>gateways</code></td>
+<td><code>string[]</code></td>
+<td>
 </td>
 <td>
 No

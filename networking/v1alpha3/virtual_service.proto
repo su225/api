@@ -275,6 +275,8 @@ message VirtualService {
   // matching an incoming request is used.
   repeated TCPRoute tcp = 4;
 
+  repeated UDPRoute udp = 7;
+
   // A list of namespaces to which this virtual service is exported. Exporting a
   // virtual service allows it to be used by sidecars and gateways defined in
   // other namespaces. This feature provides a mechanism for service owners
@@ -940,6 +942,17 @@ message TCPRoute {
 
   // The destination to which the connection should be forwarded to.
   repeated RouteDestination route = 2;
+}
+
+message UDPRoute {
+  repeated L4UDPMatchAttributes match = 1;
+  repeated RouteDestination route = 2;
+}
+
+// L4 connection match attributes for UDP
+message L4UDPMatchAttributes {
+  uint32 port = 2;
+  repeated string gateways = 5;
 }
 
 // HttpMatchRequest specifies a set of criterion to be met in order for the
